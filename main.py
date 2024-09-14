@@ -28,10 +28,11 @@ SESSION_SECRET_KEY = os.getenv('SESSION_SECRET_KEY')
 # Add Session Middleware
 app.add_middleware(SessionMiddleware, secret_key=SESSION_SECRET_KEY)
 # Configure CORS
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:8000"
-]
+# origins = [
+#     "http://localhost:3000",
+#     "http://127.0.0.1:8000"
+# ]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
